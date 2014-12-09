@@ -1,13 +1,13 @@
 /**
  ******************************************************************************
+ * @file       sparkybgcconfiguration.h
+ * @author     Tau Labs, http://taulabs.org, Copyright (C) 2014
  *
- * @file       configstabilizationwidget.h
- * @author     The OpenPilot Team, http://www.openpilot.org Copyright (C) 2010.
  * @addtogroup GCSPlugins GCS Plugins
  * @{
- * @addtogroup ConfigPlugin Config Plugin
+ * @addtogroup Boards_TauLabsPlugin Tau Labs boards support Plugin
  * @{
- * @brief Stabilization configuration panel
+ * @brief Plugin to support boards by the Tau Labs project
  *****************************************************************************/
 /*
  * This program is free software; you can redistribute it and/or modify
@@ -24,38 +24,30 @@
  * with this program; if not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA
  */
-#ifndef CONFIGSTABILIZATIONWIDGET_H
-#define CONFIGSTABILIZATIONWIDGET_H
+#ifndef SPARKYBGCCONFIGURATION_H
+#define SPARKYBGCCONFIGURATION_H
 
-#include "ui_stabilization.h"
 #include "../uavobjectwidgetutils/configtaskwidget.h"
-#include "extensionsystem/pluginmanager.h"
-#include "uavobjectmanager.h"
-#include "uavobject.h"
-#include "stabilizationsettings.h"
-#include <QWidget>
-#include <QTimer>
 
+namespace Ui {
+class SparkyBgcConfiguration;
+}
 
-class ConfigStabilizationWidget: public ConfigTaskWidget
+class SparkyBgcConfiguration : public ConfigTaskWidget
 {
     Q_OBJECT
-
+    
 public:
-    ConfigStabilizationWidget(QWidget *parent = 0);
-    ~ConfigStabilizationWidget();
+    explicit SparkyBgcConfiguration(QWidget *parent = 0);
+    ~SparkyBgcConfiguration();
+
+private slots:
+    void openHelp();
+    void refreshValues();
+    void widgetsContentsChanged();
 
 private:
-    Ui_StabilizationWidget *m_stabilization;
-    QTimer * realtimeUpdates;
-private slots:
-    void realtimeUpdatesSlot(int);
-    void linkCheckBoxes(int value);
-    void processLinkedWidgets(QWidget*);
-    void applyRateLimits();
-
-    void showMWRateConvertDialog();
-    void applyMWRateConvertDialog();
+    Ui::SparkyBgcConfiguration *ui;
 };
 
-#endif // ConfigStabilizationWidget_H
+#endif // SPARKYBGCCONFIGURATION_H
