@@ -1,8 +1,8 @@
 # Tau Labs - Demi fork
 
-## Goals
+This includes the latest work on PicoC from ernieift.
 
---- This is Demi's copy of TauLabs. Doin' just some random shit ---
+## Goals
 
 The goal of Tau Labs is to focus on writing high quality open source code for autopilots that can easily provide the basis for research projects or further development by anyone.  The project focuses on high quality code, robust testing, and ease of use. Our target audience is professionals, researchers, and students, but we want to make those more advanced techniques easy and accessible for anyone.
 
