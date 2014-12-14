@@ -1,3 +1,15 @@
+# ---------- Custom --------
+
+# Exclude Kdevelop-Projects and temporary files
+*.kdev4
+.kdev*
+*~
+
+# ----- No more custom ------
+
+
+
+
 # Exclude temporary and system files
 .DS_Store
 
